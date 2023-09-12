@@ -8,11 +8,10 @@ class ChatScreen extends StatefulWidget {
   _ChatScreenState createState() => _ChatScreenState();
 }
 
-
-
 class _ChatScreenState extends State<ChatScreen> {
+  TextEditingController messageController = TextEditingController();
   final _auth = FirebaseAuth.instance;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +39,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 children: [
                   Expanded(
                     child: TextField(
+                      controller: messageController,
                       onChanged: (value) {
                         //Do something with the user input.
                       },
